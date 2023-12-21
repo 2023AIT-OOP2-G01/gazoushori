@@ -8,7 +8,6 @@ app = Flask(__name__)
 def index():
     input = request.form.get('name')
 
-    
     return render_template('index.html')
 
 @app.route('/gazousyori1')
