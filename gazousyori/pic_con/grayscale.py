@@ -1,7 +1,6 @@
 import sys
 import cv2
 import numpy
-#インポート
 
 input = numpy.array([pow(x/255.0 , 2.2) for x in range(256)],
                          dtype='float32')
