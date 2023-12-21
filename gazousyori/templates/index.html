@@ -5,11 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>チーム課題＿web画像処理</title>
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>ファイルをアップロード</h1>
+    <div>
+        <form action="test.html" method="post" enctype="multipart/form-data">
+            <div>
+                <input type="file" name="name" accept="image/*" onchange="previewFile(this);" required>
+            </div>
+            <div>
+                <input type="submit" value="送信する">
+            </div>
+        </form>
 
+        <ol>
+            <li><a href="/gazousyori1">画像処理１</a></li>
+            <li><a href="/gazousyori2">画像処理２</a></li>
+            <li><a href="/gazousyori3">画像処理３</a></li>
+        </ol>
+
+        <p>プレビュー</p>
+        <img id="preview">
+
+        <script>
+            function previewFile(hoge) {
+                var fileData = new FileReader();
+                fileData.onload = (function () {
+                    //id属性が付与されているimgタグのsrc属性に、fileReaderで取得した値の結果を入力することで
+                    //プレビュー表示している
+                    document.getElementById('preview').src = fileData.result;
+                });
+                fileData.readAsDataURL(hoge.files[0]);
+            }
+        </script>
+    </div>
 </body>
 
 </html>
