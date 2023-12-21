@@ -23,6 +23,14 @@ def gazousyori2():
 def gazousyori3():
     return render_template('gazousyori3.html')
 
+@app.route('/gazousyori4')
+def gazousyori4():
+    return render_template('gazousyori4.html')
+
+@app.route('/gazousyori5')
+def gazousyori5():
+    return render_template('gazousyori5.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
